@@ -14,10 +14,7 @@ $class = @$_POST['class'];
 
 
 //test
-echo 'Flight Results for flights from '.$origin.' to '.$destination.', flying on '.$depart.' and returning on '.$return.' with '.$adults.' adults and '.$kids.' kids in ' .$class. ' class';
+//echo 'Flight Results for flights from '.$origin.' to '.$destination.', flying on '.$depart.' and returning on '.$return.' with '.$adults.' adults and '.$kids.' kids in ' .$class. ' class';
 }
-
-
-
 
 ?>
