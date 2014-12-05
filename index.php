@@ -103,7 +103,7 @@
   <option value=4>4</option>
   <option value=5>5</option>
 </select>
-<input id="Btnsearch" type="button" class="btn btn-default"  name="submit" onClick="showDiv() " value="Search Flights"/>
+<input id="Btnsearch" type="submit" class="btn btn-default"  name="submit"  value="Search Flights"/>
 </form>
 
 
