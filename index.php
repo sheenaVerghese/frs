@@ -11,49 +11,54 @@ Modified by: Sheena
 <html>
 	<head>
 		<meta charset="utf-8">
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- Bootstrap -->
- <link href="css/bootstrap.min.css" rel="stylesheet">
-  		<title>Airline Reservation System</title>
-		<script type="text/javascript">
-			window.onload = function() {
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  	
+    <title>Airline Reservation System</title>
+		
+    <script type="text/javascript">
+			window.onload = function() 
+      {
 				document.getElementById('oneway').onchange = disablefield;
 				document.getElementById('return').onchange = disablefield;
 			}
-			function disablefield(){
-				if ( document.getElementById('oneway').checked == true ){
+
+			function disablefield()
+      {
+				if ( document.getElementById('oneway').checked == true )
+        {
 					document.getElementById('returndate').value = '';
 					document.getElementById('returndate').disabled = true
 				}
-				else if (document.getElementById('return').checked == true ){
+				else if (document.getElementById('return').checked == true )
+        {
 					document.getElementById('returndate').disabled = false;
 				}
 			}
-			function showDiv(){
+			function showDiv()
+      {
 				document.getElementById('searchresults').style.display = 'block';
 			}
-		</script>
-        <?php
-        include ("search.php");
-		?>
+
+		</script><?php include ("search.php");?>
 	</head>
 
-<body>
-<div id="FirstImage">
-<img src="images/arslogo3.png" alt="plane_logo" width="78%" height="78%" align="right">
-</div>
+  <body>
+    <div id="FirstImage">
+      <img src="images/arslogo3.png" alt="plane_logo" width="78%" height="78%" align="right">
+    </div>
 
-<nav class="navbar-default" role="navigation">
-   <div>
-      <ul class="nav navbar-nav"">    
+    <nav class="navbar-default" role="navigation">
+      <div>
+        <ul class="nav navbar-nav"">    
         <li><a href="index.php">Home</a></li>
-		<li><a href="managebooking.html">Manage Booking</a></li>
-      </ul>
-   </div>
-</nav>
+		    <li><a href="managebooking.html">Manage Booking</a></li>
+        </ul>
+      </div>
+    </nav>
 
 <div >
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="searchform" id="searchform">
