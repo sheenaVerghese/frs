@@ -4,6 +4,7 @@
 * Author: Shezan M
 * Date: November 25th 2014
 *
+Modified by: Sheena
 *
 ********************************************************-->
 <!DOCTYPE html>
@@ -60,20 +61,25 @@
 <input id="return" type="radio" name="flighttype" value="return" value="return" checked> Return</input>
 <br>
 
+
 <label for="origin">Origin:</label>
 <select class="form-control" id="origin" name="origin">
-  <option value="KUL">Kuala Lumpur (KUL)</option>
-  <option value="LHR">London Heathrow (LHR)</option>
-  <option value="DAR">Dar Es Salaam (DAR)</option>
-  <option value="DXB">Dubai (DXB)</option>
+  <option value="origin"selected>Origin</option>
+  <option value="Kuala Lumpur (KUL)">Kuala Lumpur (KUL)</option>
+  <option value="London Heathrow (LHR)">London Heathrow (LHR)</option>
+  <option value="Dar Es Salaam (DAR)">Dar Es Salaam (DAR)</option>
+  <option value="Dubai (DXB)">Dubai (DXB)</option>
   //add more countries
+ 
 </select>
+
 <label for="destination">Destination:</label>
 <select class="form-control" id="destination" name="destination">
-  <option value="KUL">Kuala Lumpur (KUL)</option>
-  <option value="LHR">London Heathrow (LHR)</option>
-  <option value="DAR">Dar Es Salaam (DAR)</option>
-  <option value="DXB">Dubai (DXB)</option>
+  <option value="destination" selected>Destination</option>
+  <option value="Kuala Lumpur (KUL)">Kuala Lumpur (KUL)</option>
+  <option value="London Heathrow (LHR)">London Heathrow (LHR)</option>
+  <option value="Dar Es Salaam (DAR)">Dar Es Salaam (DAR)</option>
+  <option value="Dubai (DXB)">Dubai (DXB)</option>
   <option value="more">add more countries</option>
 </select>
 <label for="departdate">Depart:</label>
@@ -87,7 +93,7 @@
  </select>
 <label for="adults">Adults:</label>
 <select class="form-control" id="adults" name="adults">
-  <option value=0>0</option>
+  <option value=0 selected>0</option>
   <option value=1>1</option>
   <option value=2>2</option>
   <option value=3>3</option>
@@ -96,7 +102,7 @@
 </select>
 <label for="kids">Kids:</label>
 <select class="form-control" id="kids" name="kids">
-  <option value=0>0</option>
+  <option value=0 selected>0</option>
   <option value=1>1</option>
   <option value=2>2</option>
   <option value=3>3</option>
