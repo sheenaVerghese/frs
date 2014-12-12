@@ -4,7 +4,7 @@
 * Author: Shezan M
 * Date: November 25th 2014
 *
-Modified by: Sheena
+Modified by: Sheena, Jake
 *
 ********************************************************-->
 <!DOCTYPE html>
@@ -48,82 +48,95 @@ Modified by: Sheena
 
   <body>
     <div id="FirstImage">
-      <img src="images/arslogo3.png" alt="plane_logo" width="78%" height="78%" align="right">
+      <img src="images/arslogo3.png" alt="plane_logo" width="100%" height="100%" align="left">
     </div>
 
     <nav class="navbar-default" role="navigation">
       <div>
-        <ul class="nav navbar-nav"">    
-        <li><a href="index.php">Home</a></li>
-		    <li><a href="managebooking.html">Manage Booking</a></li>
+        <ul class="nav navbar-nav">    
+          <li><a href="index.php">Home</a></li>
+		      <li><a href="managebooking.html">Manage Booking</a></li>
         </ul>
       </div>
     </nav>
 
-<div >
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="searchform" id="searchform">
-<input id="oneway" type="radio" name="flighttype" value="oneway" value="return"> One-way </input>
-<input id="return" type="radio" name="flighttype" value="return" value="return" checked> Return</input>
-<br>
+    <div >
+      <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="searchform" id="searchform">
+        <input id="oneway" type="radio" name="flighttype" value="oneway" value="return"> One-way </input>
+        <input id="return" type="radio" name="flighttype" value="return" value="return" checked> Return</input>
 
+        <br>
 
-<label for="origin">Origin:</label>
-<select class="form-control" id="origin" name="origin">
-  <option value="origin"selected>Origin</option>
-  <option value="Kuala Lumpur (KUL)">Kuala Lumpur (KUL)</option>
-  <option value="London Heathrow (LHR)">London Heathrow (LHR)</option>
-  <option value="Dar Es Salaam (DAR)">Dar Es Salaam (DAR)</option>
-  <option value="Dubai (DXB)">Dubai (DXB)</option>
-  //add more countries
- 
-</select>
+        <label for="origin">Origin:</label>
 
-<label for="destination">Destination:</label>
-<select class="form-control" id="destination" name="destination">
-  <option value="destination" selected>Destination</option>
-  <option value="Kuala Lumpur (KUL)">Kuala Lumpur (KUL)</option>
-  <option value="London Heathrow (LHR)">London Heathrow (LHR)</option>
-  <option value="Dar Es Salaam (DAR)">Dar Es Salaam (DAR)</option>
-  <option value="Dubai (DXB)">Dubai (DXB)</option>
-  <option value="more">add more countries</option>
-</select>
-<label for="departdate">Depart:</label>
-<input id="departdate" class="form-control" type="date" name="depart" alt="">
-<label for="returndate">Return:</label>
-<input id="returndate" class="form-control" type="date" name="return" alt="">
-<label for="class">Class:</label>
-<select class="form-control" id="class" name="class">
-  <option id="economy" value="Economy">Economy</option>
-  <option id="business" value="Business">Business</option>
- </select>
-<label for="adults">Adults:</label>
-<select class="form-control" id="adults" name="adults">
-  <option value=0 selected>0</option>
-  <option value=1>1</option>
-  <option value=2>2</option>
-  <option value=3>3</option>
-  <option value=4>4</option>
-  <option value=5>5</option>
-</select>
-<label for="kids">Kids:</label>
-<select class="form-control" id="kids" name="kids">
-  <option value=0 selected>0</option>
-  <option value=1>1</option>
-  <option value=2>2</option>
-  <option value=3>3</option>
-  <option value=4>4</option>
-  <option value=5>5</option>
-</select>
-<input id="Btnsearch" type="submit" class="btn btn-default"  name="submit"  value="Search Flights"/>
-</form>
+        <select class="form-control" id="origin" name="origin">
+          <option value="origin"selected>Origin</option>
+          <option value="Kuala Lumpur (KUL)">Kuala Lumpur (KUL)</option>
+          <option value="London Heathrow (LHR)">London Heathrow (LHR)</option>
+          <option value="Dar Es Salaam (DAR)">Dar Es Salaam (DAR)</option>
+          <option value="Dubai (DXB)">Dubai (DXB)</option>
+        </select>
 
+        <label for="destination">Destination:</label>
 
-</div>
-<div id="searchresults">
+        <select class="form-control" id="destination" name="destination">
+          <option value="destination" selected>Destination</option>
+          <option value="Kuala Lumpur (KUL)">Kuala Lumpur (KUL)</option>
+          <option value="London Heathrow (LHR)">London Heathrow (LHR)</option>
+          <option value="Dar Es Salaam (DAR)">Dar Es Salaam (DAR)</option>
+          <option value="Dubai (DXB)">Dubai (DXB)</option>
+          <option value="more">add more countries</option>
+        </select>
 
-<div id="dep">
-<!--add php script to save users choice-->
-<form id= "flights" >
+        <label for="departdate">Depart:</label>
+
+        <input id="departdate" class="form-control" type="date" name="depart" alt="">
+        
+        <label for="returndate">Return:</label>
+        
+        <input id="returndate" class="form-control" type="date" name="return" alt="">
+        
+        <label for="class">Class:</label>
+
+        <select class="form-control" id="class" name="class">
+          <option id="economy" value="Economy">Economy</option>
+          <option id="business" value="Business">Business</option>
+        </select>
+
+        <label for="adults">Adults:</label>
+
+        <select class="form-control" id="adults" name="adults">
+          <option value=0 selected>0</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
+        </select>
+
+        <label for="kids">Kids:</label>
+        
+        <select class="form-control" id="kids" name="kids">
+          <option value=0 selected>0</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
+        </select>
+
+        <input id="Btnsearch" type="submit" class="btn btn-default"  name="submit"  value="Search Flights"/>
+      
+      </form>
+    </div>
+
+<!--the code after this line can be handled by search.php in details but it needs to have a defined div to hold the results from search.php-->
+
+    <div id="searchresults">
+
+      <div id="dep">
+      <form id= "flights" >
+
 <h2>Departing Flight</h2>
 <input id="flight1" type="radio" name="depflight" value="flight1" value="flight1"><?php echo 'will ' .$origin; ?> </input>
 <br>
