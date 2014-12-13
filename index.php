@@ -47,6 +47,30 @@ Modified by: Sheena, Jake
 	</head>
 
   <body>
+         <script>
+         //gets the destinations available from database
+                function getDestination(str) {
+                    if (str == "origin") {
+                        document.getElementById("destination").innerHTML = "";
+                        return;
+                    } else {
+                        if (window.XMLHttpRequest) {
+                            // code for IE7+, Firefox, Chrome, Opera, Safari
+                            xmlhttp = new XMLHttpRequest();
+                        } else {
+                            // code for IE6, IE5
+                            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                        }
+                        xmlhttp.onreadystatechange = function() {
+                            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                                document.getElementById("destination").innerHTML = xmlhttp.responseText;
+                            }
+                        }
+                        xmlhttp.open("GET","Destination_Database.php?origin="+str,true);
+                        xmlhttp.send();
+                    }
+                }
+        </script>
     <div id="FirstImage">
       <img src="images/arslogo3.png" alt="plane_logo" width="100%" height="100%" align="left">
     </div>
@@ -69,24 +93,20 @@ Modified by: Sheena, Jake
 
         <label for="origin">Origin:</label>
 
-        <select class="form-control" id="origin" name="origin">
-          <option value="origin"selected>Origin</option>
-          <option value="Kuala Lumpur (KUL)">Kuala Lumpur (KUL)</option>
-          <option value="London Heathrow (LHR)">London Heathrow (LHR)</option>
-          <option value="Dar Es Salaam (DAR)">Dar Es Salaam (DAR)</option>
-          <option value="Dubai (DXB)">Dubai (DXB)</option>
+        <select class="form-control" id="origin" name="origin"onchange="getDestination(this.value)">
+          <option value="origin"selected>Select Origin</option>
+          <option value="Kuala Lumpur(KUL)">Kuala Lumpur (KUL)</option>
+          <option value="London Heathrow(LHR)">London Heathrow (LHR)</option>
+          <option value="Dar Es Salaam(DAR)">Dar Es Salaam (DAR)</option>
+          <option value="Dubai(DXB)">Dubai (DXB)</option>
         </select>
 
         <label for="destination">Destination:</label>
-
-        <select class="form-control" id="destination" name="destination">
-          <option value="destination" selected>Destination</option>
-          <option value="Kuala Lumpur (KUL)">Kuala Lumpur (KUL)</option>
-          <option value="London Heathrow (LHR)">London Heathrow (LHR)</option>
-          <option value="Dar Es Salaam (DAR)">Dar Es Salaam (DAR)</option>
-          <option value="Dubai (DXB)">Dubai (DXB)</option>
-          <option value="more">add more countries</option>
+        
+        <select class="form-control" id="destination" name="destination"  >
+        
         </select>
+        
 
         <label for="departdate">Depart:</label>
 
