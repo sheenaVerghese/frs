@@ -1,4 +1,3 @@
-
 <!--******************************************************
 * Title: Home/Search Page
 * Author: Shezan M
@@ -10,16 +9,29 @@ Modified by: Sheena
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- Bootstrap -->
- <link href="css/bootstrap.min.css" rel="stylesheet">
+		
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" >
+		<link rel="stylesheet" type="text/css" media="all" href="jsDatePick_ltr.min.css" />
+
   		<title>Airline Reservation System</title>
+		
+		<script type="text/javascript" src="bootstrap.js"></script>
+		<script type="text/javascript" src="jsDatePick.min.1.3.js"></script>
 		<script type="text/javascript">
 			window.onload = function() {
+				new JsDatePick({
+					useMode:2,
+					target:"departdate",
+					dateFormat:"%d-%M-%Y"
+				});
+				new JsDatePick({
+					useMode:2,
+					target:"returndate",
+					dateFormat:"%d-%M-%Y"
+				});
 				document.getElementById('oneway').onchange = disablefield;
 				document.getElementById('return').onchange = disablefield;
 			}
@@ -33,117 +45,111 @@ Modified by: Sheena
 				}
 			}
 			function showDiv(){
-				document.getElementById('searchresults').style.display = 'block';
+				document.getElementById('searchresults').style.display = 'block'; 
 			}
 		</script>
-        <?php
+
+        
+		<?php
         include ("search.php");
 		?>
 	</head>
+	
+    <body>
+		<div id="FirstImage">
+  			
+			<img src="images/arslogo3.png" alt="plane_logo" width="78%" height="78%" align="right">
+		</div>
+		
+        <nav class="navbar-default" role="navigation">
+            <div>
+                <ul class="nav navbar-nav"">    
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="managebooking.html">Manage Booking</a></li>
+                </ul>
+             </div>
+		</nav>
 
-<body>
-<div id="FirstImage">
-<img src="images/arslogo3.png" alt="plane_logo" width="78%" height="78%" align="right">
-</div>
+		<div>
+			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="searchform" id="searchform">
+				<input id="oneway" type="radio" name="flighttype" value="oneway" value="return"> One-way </input>
+				<input id="return" type="radio" name="flighttype" value="return" value="return" checked> Return</input>
+				<br>
+				<label for="origin">Origin:</label>
+				<select class="form-control" id="origin" name="origin">
+                	<option value="Origin"selected>Origin</option>
+                    <option value="Kuala Lumpur (KUL)">Kuala Lumpur (KUL)</option>
+                    <option value="London Heathrow (LHR)">London Heathrow (LHR)</option>
+                    <option value="Dar Es Salaam (DAR)">Dar Es Salaam (DAR)</option>
+                    <option value="Dubai (DXB)">Dubai (DXB)</option>                     
+				</select>
 
-<nav class="navbar-default" role="navigation">
-   <div>
-      <ul class="nav navbar-nav"">    
-        <li><a href="index.php">Home</a></li>
-		<li><a href="managebooking.html">Manage Booking</a></li>
-      </ul>
-   </div>
-</nav>
+                <label for="Destination">Destination:</label>
+                    <select class="form-control" id="destination" name="destination">
+                    <option value="destination" selected>Destination</option>
+                    <option value="Kuala Lumpur (KUL)">Kuala Lumpur (KUL)</option>
+                    <option value="London Heathrow (LHR)">London Heathrow (LHR)</option>
+                    <option value="Dar Es Salaam (DAR)">Dar Es Salaam (DAR)</option>
+                    <option value="Dubai (DXB)">Dubai (DXB)</option>
+                </select>
+                
+                <label for="departdate">Depart:</label>
+                <input id="departdate" class="form-control" type="text" size="12" name="depart" alt="">
+                
+                <label for="returndate">Return:</label>
+                <input id="returndate" class="form-control" type="text" size="12" name="depart" alt="">
+                
+                <label for="class">Class:</label>
+                <select class="form-control" id="class" name="class">
+                	<option id="economy" value="Economy">Economy</option>
+                	<option id="business" value="Business">Business</option>
+                 </select>
+                 
+                <label for="adults">Adults:</label>
+                	<select class="form-control" id="adults" name="adults">
+                		<option value=0 selected>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                    
+                <label for="kids">Kids:</label>
+                <select class="form-control" id="kids" name="kids">
+                    <option value=0 selected>0</option>
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                </select>
 
-<div >
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="searchform" id="searchform">
-<input id="oneway" type="radio" name="flighttype" value="oneway" value="return"> One-way </input>
-<input id="return" type="radio" name="flighttype" value="return" value="return" checked> Return</input>
-<br>
+				<input id="Btnsearch" type="submit" class="btn btn-default"  name="submit"  value="Search Flights"/>
+			</form>
+		</div>
+        
+		<div id="searchresults">
+			<div id="dep">
+				<!--add php script to save users choice-->
+				<form id= "flights" >
+					<h2>Departing Flight</h2>
+					<input id="flight1" type="radio" name="depflight" value="flight1" value="flight1"><?php ?></input><br>
+					<input id="flight2" type="radio" name="depflight" value="flight2" value="flight2"><?php ?></input><br>
+					<input id="flight3" type="radio" name="depflight" value="flight3" value="flight3"><?php ?> </input>
 
-
-<label for="origin">Origin:</label>
-<select class="form-control" id="origin" name="origin">
-  <option value="origin"selected>Origin</option>
-  <option value="Kuala Lumpur (KUL)">Kuala Lumpur (KUL)</option>
-  <option value="London Heathrow (LHR)">London Heathrow (LHR)</option>
-  <option value="Dar Es Salaam (DAR)">Dar Es Salaam (DAR)</option>
-  <option value="Dubai (DXB)">Dubai (DXB)</option>
-  //add more countries
- 
-</select>
-
-<label for="destination">Destination:</label>
-<select class="form-control" id="destination" name="destination">
-  <option value="destination" selected>Destination</option>
-  <option value="Kuala Lumpur (KUL)">Kuala Lumpur (KUL)</option>
-  <option value="London Heathrow (LHR)">London Heathrow (LHR)</option>
-  <option value="Dar Es Salaam (DAR)">Dar Es Salaam (DAR)</option>
-  <option value="Dubai (DXB)">Dubai (DXB)</option>
-  <option value="more">add more countries</option>
-</select>
-<label for="departdate">Depart:</label>
-<input id="departdate" class="form-control" type="date" name="depart" alt="">
-<label for="returndate">Return:</label>
-<input id="returndate" class="form-control" type="date" name="return" alt="">
-<label for="class">Class:</label>
-<select class="form-control" id="class" name="class">
-  <option id="economy" value="Economy">Economy</option>
-  <option id="business" value="Business">Business</option>
- </select>
-<label for="adults">Adults:</label>
-<select class="form-control" id="adults" name="adults">
-  <option value=0 selected>0</option>
-  <option value=1>1</option>
-  <option value=2>2</option>
-  <option value=3>3</option>
-  <option value=4>4</option>
-  <option value=5>5</option>
-</select>
-<label for="kids">Kids:</label>
-<select class="form-control" id="kids" name="kids">
-  <option value=0 selected>0</option>
-  <option value=1>1</option>
-  <option value=2>2</option>
-  <option value=3>3</option>
-  <option value=4>4</option>
-  <option value=5>5</option>
-</select>
-<input id="Btnsearch" type="submit" class="btn btn-default"  name="submit"  value="Search Flights"/>
-</form>
-
-
-</div>
-<div id="searchresults">
-
-<div id="dep">
-<!--add php script to save users choice-->
-<form id= "flights" >
-<h2>Departing Flight</h2>
-<input id="flight1" type="radio" name="depflight" value="flight1" value="flight1"><?php echo 'will ' .$origin; ?> </input>
-<br>
-<input id="flight2" type="radio" name="depflight" value="flight2" value="flight2"><?php echo 'be ' .$destination; ?> </input>
-<br>
-<input id="flight3" type="radio" name="depflight" value="flight3" value="flight3"><?php echo 'changed '.$depart; ?> </input>
-
-</form>
-</div>
-<div id="ret">
-<form id="flights">
-<h2>Returning Flight</h2>
-<input id="flight1" type="radio" name="retflight" value="flight1" value="flight1"><?php echo 'to ' .$return; ?> </input>
-<br>
-<input id="flight2" type="radio" name="retflight" value="flight2" value="flight2"> 
-<?php echo 'actual ' .$adults; ?> </input>
-<br>
-<input id="flight3" type="radio" name="retflight" value="flight3" value="flight3"><?php echo 'results ' .$kids; ?> </input>
-<br><br><br>
-<input type="submit" class="btn btn-default" id="Btnsearch2" formaction="travellerdetails.php" value="Continue"/>
-</form>
-
-</div>
-</div>
-
-</body>
-
+				</form>
+			</div>
+			<div id="ret">
+				<form id="flights">
+					<h2>Returning Flight</h2>
+					<input id="flight1" type="radio" name="retflight" value="flight1" value="flight1"><?php ?></input><br>
+					<input id="flight2" type="radio" name="retflight" value="flight2" value="flight2"><?php ?> </input><br>
+					<input id="flight3" type="radio" name="retflight" value="flight3" value="flight3"><?php ?> </input>
+					<br><br><br>
+					<input type="submit" class="btn btn-default" id="Btnsearch2" formaction="travellerdetails.php" value="Continue"/>
+				</form>
+			</div>
+		</div>
+	</body>
 </html>
