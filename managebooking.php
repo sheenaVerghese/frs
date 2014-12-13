@@ -19,7 +19,9 @@ Date Modified: December 12 2014
          <link href="css/bootstrap.min.css" rel="stylesheet">
 	 
 	 <?php
-include ("ManageBooking_Database.php");
+include ("ManageBooking_Database.php"); // added by Mansa
+		 include ("cancelbooking.php"); // added by Mansa
+
 
          ?>
         </head>
@@ -35,7 +37,7 @@ include ("ManageBooking_Database.php");
            <div>
               <ul class="nav navbar-nav">
                       <li><a href="index.php">Home</a></li>
-                      <li><a href="managebooking.html">Manage Booking</a></li>
+                      <li><a href="managebooking.php">Manage Booking</a></li>
               </ul>
            </div>
         </nav>
@@ -52,10 +54,14 @@ include ("ManageBooking_Database.php");
                   <label for="passport">Passport Number:</label>
                   <input type="password" class="form-control" id="pwd" placeholder="Enter passport number" name="passport">
               </div>
-	      <input type="submit" class="btn btn-default" id="Managebooking" name="Managebooking" value="Manage booking"/>
+	      <input type="submit" class="btn btn-default" id="Managebooking" name="Managebooking" value="Manage booking"/> <!-- added by Mansa -->
        
               </form>
             </div>
+	    
+	    <div class = "Cancel">
+	    <input type="submit" class="btn btn-default" id="Cancelbooking" name="Cancelbooking" value="Cancel booking"/> <!-- added by Mansa -->
+	    </div>
 
          <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
               <script src="https://code.jquery.com/jquery.js"></script>
