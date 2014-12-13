@@ -43,7 +43,8 @@ Modified by: Sheena, Jake
 				document.getElementById('searchresults').style.display = 'block';
 			}
 
-		</script><?php include ("search.php");?>
+        </script>
+        <?php include ("search.php"); ?>
 	</head>
 
   <body>
@@ -71,6 +72,7 @@ Modified by: Sheena, Jake
                     }
                 }
         </script>
+        
     <div id="FirstImage">
       <img src="images/arslogo3.png" alt="plane_logo" width="100%" height="100%" align="left">
     </div>
@@ -102,7 +104,7 @@ Modified by: Sheena, Jake
         </select>
 
         <label for="destination">Destination:</label>
-        
+        <!--This part is handled by Destination_Database. This is required to act as a container-->
         <select class="form-control" id="destination" name="destination"  >
         
         </select>
@@ -152,9 +154,9 @@ Modified by: Sheena, Jake
 
 <!--the code after this line can be handled by search.php in details but it needs to have a defined div to hold the results from search.php-->
 
-    <div id="searchresults">
+    <div id="searchResults">
 
-      <div id="dep">
+<!--      <div id="dep">
       <form id= "flights" >
 
 <h2>Departing Flight</h2>
@@ -180,8 +182,8 @@ Modified by: Sheena, Jake
 </form>
 
 </div>
+-->
 </div>
-
 </body>
 
 </html>

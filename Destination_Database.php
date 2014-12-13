@@ -26,7 +26,7 @@
                              echo "<option value='dest' selected>Select Destination</option>";
                              while(($row = $result->fetch_assoc())) {
                                $destination=$row['Destination'];
-                               echo "<option value=".$destination.">".$destination."</option>";
+                               echo "<option value='".$destination."'>".$destination."</option>";
                                 
                              }
                              
