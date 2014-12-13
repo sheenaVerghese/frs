@@ -26,11 +26,11 @@
 
         $sql = "SELECT FlightID, SeatID, PassportNumber FROM customer";
         $result = $conn->query($sql);
-        $bookingI=false;
+        $bookingExists=false;
         if (($result->num_rows > 0)&&($bookingNum!=" "&&$pwd!=" ")) {
              // output data of each row
              
-             while(($row = $result->fetch_assoc())&&$bookingI==false) {
+             while(($row = $result->fetch_assoc())&&$bookingExists==false) {
                 $booking_ID=$row["FlightID"].$row["SeatID"];
                 echo $booking_ID;
                 if($booking_ID==$bookingNum){
