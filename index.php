@@ -99,7 +99,26 @@ Modified by: Sheena, Jake
                     }
                 }
         </script>
-        
+         <script>
+         //gets the search results available from database
+         //not sure how this should work
+                $(function () {
+        $('form').bind('submit', function (event) {
+
+event.preventDefault();// using this page stop being refreshing 
+
+          $.ajax({
+            type: 'POST',
+            url: 'search.php',
+            data: $('form').serialize(),
+            success: function () {
+              alert('form was submitted');
+            }
+          });
+
+        });
+      });
+    </script>
     <div id="FirstImage">
       <img src="images/arslogo3.png" alt="plane_logo" width="100%" height="100%" align="left">
     </div>
@@ -174,14 +193,14 @@ Modified by: Sheena, Jake
           <option value=5>5</option>
         </select>
 
-        <input id="Btnsearch" type="submit" class="btn btn-default"  name="submit"  value="Search Flights"/>
+        <input id="Btnsearch" type="submit" class="btn btn-default"  name="submit"  value="Search Flights" onclick="searchResults()" />
       
       </form>
     </div>
 
 <!--the code after this line can be handled by search.php in details but it needs to have a defined div to hold the results from search.php-->
 
-    <div id="searchResults">
+    <div id="searchResults" >
 
 <!--      <div id="dep">
       <form id= "flights" >
