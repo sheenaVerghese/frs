@@ -8,7 +8,20 @@
 <html>
         <body>
         
+	 <link href="stylestyle.css" rel="stylesheet" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <!-- Bootstrap -->
+         <link href="css/bootstrap.min.css" rel="stylesheet">
+         
+         <?php
+		 include ("cancelbooking.php"); // added by Mansa
+		 ?>
+	 
+	 
         <?php
+	
+	if (isset($_POST['Manage booking'])){ // added by Mansa
+	
         $servername = "localhost";
         //change these according to your database credentials
         $username = "root";
@@ -38,15 +51,21 @@
                 }
                 if($booking_ID==$bookingNum&&$row["PassportNumber"]==$pwd){
                          echo "<br> id: ". $row["FlightID"]. " - Name: ". $row["SeatID"]. " " . $row["PassportNumber"] . "<br>";
-                }
+			 echo "<br> <input type="cancelBooking" class="btn btn-default" id="Cancelbooking" name="Cancelbooking" value="Cancel booking"/> '"// syntax error over here which I cant indentify
+				
+			
+				}
                 
              }
         } 
        else{
-             echo "0 results";
+             echo "No results found";
         }
 
         $conn->close();
+	
+	
+	} // end if
 ?>  
         
         
