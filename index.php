@@ -1,4 +1,3 @@
-
 <!--******************************************************
 * Title: Home/Search Page
 * Author: Shezan M
@@ -11,15 +10,17 @@ Modified by: Sheena, Jake
 <html>
 	<head>
 		<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" >
+		<link rel="stylesheet" type="text/css" media="all" href="jsDatePick_ltr.min.css" />
   	
     <title>Airline Reservation System</title>
 		
-    <script type="text/javascript">
+       <script type="text/javascript">
 			window.onload = function() 
       {
 				document.getElementById('oneway').onchange = disablefield;
@@ -42,6 +43,32 @@ Modified by: Sheena, Jake
       {
 				document.getElementById('searchresults').style.display = 'block';
 			}
+
+        </script>
+    <script type="text/javascript" src="bootstrap.js"></script>
+		<script type="text/javascript" src="jsDatePick.min.1.3.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				new JsDatePick({
+					useMode:2,
+					target:"departdate",
+					dateFormat:"%d-%M-%Y"
+				});
+				new JsDatePick({
+					useMode:2,
+					target:"returndate",
+					dateFormat:"%d-%M-%Y"
+				});
+				document.getElementById('oneway').onchange = disablefield;
+				document.getElementById('return').onchange = disablefield;
+			}
+				
+			
+			function showDiv(){
+				document.getElementById('searchresults').style.display = 'block';
+				document.getElementById('searchresults').style.display = 'block'; 
+			}
+
 
         </script>
         <?php include ("search.php"); ?>
@@ -112,11 +139,11 @@ Modified by: Sheena, Jake
 
         <label for="departdate">Depart:</label>
 
-        <input id="departdate" class="form-control" type="date" name="depart" alt="">
+                <input id="departdate" class="form-control" type="text" size="12" name="depart" alt="">
         
         <label for="returndate">Return:</label>
         
-        <input id="returndate" class="form-control" type="date" name="return" alt="">
+                <input id="returndate" class="form-control" type="text" size="12" name="depart" alt="">
         
         <label for="class">Class:</label>
 
@@ -160,23 +187,22 @@ Modified by: Sheena, Jake
       <form id= "flights" >
 
 <h2>Departing Flight</h2>
-<input id="flight1" type="radio" name="depflight" value="flight1" value="flight1"><?php echo 'will ' .$origin; ?> </input>
+<input id="flight1" type="radio" name="depflight" value="flight1" value="flight1"><?php  ?> </input>
 <br>
-<input id="flight2" type="radio" name="depflight" value="flight2" value="flight2"><?php echo 'be ' .$destination; ?> </input>
+<input id="flight2" type="radio" name="depflight" value="flight2" value="flight2"><?php ?> </input>
 <br>
-<input id="flight3" type="radio" name="depflight" value="flight3" value="flight3"><?php echo 'changed '.$depart; ?> </input>
+<input id="flight3" type="radio" name="depflight" value="flight3" value="flight3"><?php  ?> </input>
 
 </form>
 </div>
 <div id="ret">
 <form id="flights">
 <h2>Returning Flight</h2>
-<input id="flight1" type="radio" name="retflight" value="flight1" value="flight1"><?php echo 'to ' .$return; ?> </input>
+<input id="flight1" type="radio" name="retflight" value="flight1" value="flight1"><?php ?> </input>
 <br>
-<input id="flight2" type="radio" name="retflight" value="flight2" value="flight2"> 
-<?php echo 'actual ' .$adults; ?> </input>
+<input id="flight2" type="radio" name="retflight" value="flight2" value="flight2"><?php ?> </input>
 <br>
-<input id="flight3" type="radio" name="retflight" value="flight3" value="flight3"><?php echo 'results ' .$kids; ?> </input>
+<input id="flight3" type="radio" name="retflight" value="flight3" value="flight3"><?php  ?> </input>
 <br><br><br>
 <input type="submit" class="btn btn-default" id="Btnsearch2" formaction="travellerdetails.php" value="Continue"/>
 </form>
