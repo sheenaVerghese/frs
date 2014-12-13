@@ -13,8 +13,8 @@
         $servername = "localhost";
         //change these according to your database credentials
         $username = "root";
-        $password = "root";
-        $dbname = "sqm";
+        $password = "";
+        $dbname = "sqm"
         $bookingNum=isset($_POST['booking'])?$_POST['booking']:" ";
         $pwd=isset($_POST['passport'])?$_POST['passport']:" ";
         // Create connection

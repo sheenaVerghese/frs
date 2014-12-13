@@ -20,7 +20,7 @@ Modified by: Sheena, Jake
   	
     <title>Airline Reservation System</title>
 		
-       <script type="text/javascript">
+    <script type="text/javascript">
 			window.onload = function() 
       {
 				document.getElementById('oneway').onchange = disablefield;
@@ -43,12 +43,13 @@ Modified by: Sheena, Jake
       {
 				document.getElementById('searchresults').style.display = 'block';
 			}
+    </script>
 
-        </script>
     <script type="text/javascript" src="bootstrap.js"></script>
 		<script type="text/javascript" src="jsDatePick.min.1.3.js"></script>
 		<script type="text/javascript">
-			window.onload = function() {
+			window.onload = function() 
+      {
 				new JsDatePick({
 					useMode:2,
 					target:"departdate",
@@ -62,19 +63,17 @@ Modified by: Sheena, Jake
 				document.getElementById('oneway').onchange = disablefield;
 				document.getElementById('return').onchange = disablefield;
 			}
-				
-			
-			function showDiv(){
+			function showDiv()
+      {
 				document.getElementById('searchresults').style.display = 'block';
 				document.getElementById('searchresults').style.display = 'block'; 
 			}
-
-
-        </script>
-        <?php include ("search.php"); ?>
+    </script>
+    <?php include ("search.php"); ?>
 	</head>
 
   <body>
+<<<<<<< Updated upstream
          <script>
          //gets the destinations available from database
                 function getDestination(str) {
@@ -119,6 +118,42 @@ event.preventDefault();// using this page stop being refreshing
         });
       });
     </script>
+=======
+    <script>
+    //gets the destinations available from database
+      function getDestination(str) 
+      {
+          if (str == "origin") 
+          {
+              document.getElementById("destination").innerHTML = "";
+              return;
+          } 
+          else 
+          {
+              if (window.XMLHttpRequest) 
+              {
+                  // code for IE7+, Firefox, Chrome, Opera, Safari
+                  xmlhttp = new XMLHttpRequest();
+              } 
+              else 
+              {
+                  // code for IE6, IE5
+                  xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+              }
+              xmlhttp.onreadystatechange = function() 
+              {
+                  if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+                  {
+                      document.getElementById("destination").innerHTML = xmlhttp.responseText;
+                  }
+              }
+              xmlhttp.open("GET","Destination_Database.php?origin="+str,true);
+              xmlhttp.send();
+          }
+      }
+      </script>
+        
+>>>>>>> Stashed changes
     <div id="FirstImage">
       <img src="images/arslogo3.png" alt="plane_logo" width="100%" height="100%" align="left">
     </div>
@@ -134,6 +169,7 @@ event.preventDefault();// using this page stop being refreshing
 
     <div >
       <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="searchform" id="searchform">
+
         <input id="oneway" type="radio" name="flighttype" value="oneway" value="return"> One-way </input>
         <input id="return" type="radio" name="flighttype" value="return" value="return" checked> Return</input>
 

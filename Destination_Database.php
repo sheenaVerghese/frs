@@ -6,7 +6,7 @@
                         $servername = "localhost";
                         //change these according to your database credentials
                         $username = "root";
-                        $password = "root";
+                        $password = "";
                         $dbname = "sqm";
                         $origin=$_GET['origin'];
                         
