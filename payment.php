@@ -22,9 +22,7 @@ include ("addons1.php");
 </head>
 
 <body>
-<div id="FirstImage">
-<img src="images/arslogo2.png" alt="plane_logo">
-</div>
+
 <nav class="navbar navbar-default" role="navigation">
    <div class="navbar-header">
    
@@ -38,21 +36,14 @@ include ("addons1.php");
       </ul>
    </div>
 </nav>
-
-<nav class="navbar navbar-default" role="navigation">
-   <div class="navbar-header">
-  </div>
-  <div>
-    <ul class="nav navbar-nav">        
-        <li><a href="travellerdetails.php">Traveller Details</a></li>
-        <li><a href="">Seats</a></li>
-        <li><a href="addons.php">Add-Ons</a></li>
-        <li><a>Payment</a></li>
-     </ul>
-   </div>
-</nav>
-
-
+<div>
+    <ol class="progtrckr" data-progtrckr-steps="4">
+    <li class="progtrckr-done"><a href="travellerdetails.php">Traveller Details</a></li><!--
+ --><li class="progtrckr-done">Seat Selection</li><!--
+ --><li class="progtrckr-done"><a href="addons.php">Add-Ons</a></li><!--
+ --><li class="progtrckr-todo">Payment</li>
+</ol>
+</div>
 
 
 
