@@ -8,10 +8,9 @@
 }
 
 #searchform {
-	/*line-height: 30px;*/
+	line-height: 30px;
 	background-color: #eeeeee;
 	width: 280px;
-	float: left;
 	padding: 5px;
 	width: 280px;
 }

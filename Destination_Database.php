@@ -6,7 +6,7 @@
                         $servername = "localhost";
                         //change these according to your database credentials
                         $username = "root";
-                        $password = "root";
+                        $password = "";
                         $dbname = "sqm";
                         $origin=$_GET['origin'];
                         
@@ -27,6 +27,8 @@
                              while(($row = $result->fetch_assoc())) {
                                $destination=$row['Destination'];
                                echo "<option value='".$destination."'>".$destination."</option>";
+                               
+                               
                                 
                              }
                              
