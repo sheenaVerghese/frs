@@ -23,38 +23,38 @@
        $password = "root";
        $dbname = "sqm";
        $month=0;
-        if($date[1]=='Jan'){
+        if($date[1]=='JAN'){
         $month=1;      
         }
-        else if($date[1]=="Feb"){
+        else if($date[1]=="FEB"){
         $month=2;
         }
-        else if($date[1]=="Mar"){
+        else if($date[1]=="MAR"){
         $month=3;
         }
-        else if($date[1]=="Apr"){
+        else if($date[1]=="APR"){
         $month=4;
         }
-        else if($date[1]=="May"){
+        else if($date[1]=="MAY"){
         $month=5;
         }
         
-        else if($date[1]=="Jun"){
+        else if($date[1]=="JUN"){
         $month=6;
         }
        
-        else if($date[1]=="Jul"){
+        else if($date[1]=="JUL"){
         $month=7;
         }
-        else if($date[1]=="Aug"){
+        else if($date[1]=="AUG"){
         $month=8;
         }
-        else if($date[1]=="Sept"){
+        else if($date[1]=="SEP"){
         $month=9;
-        }else if($date[1]=="Oct"){
+        }else if($date[1]=="OCT"){
         $month=10;
         }
-        else if($date[1]=="Nov"){
+        else if($date[1]=="NOV"){
         $month=11;
         }
         else {
@@ -71,13 +71,15 @@
        die("Connection failed: " . $conn->connect_error);
         }
        // echo "dest is ".$destination;                
-        $sql = "SELECT FlightID,ArrivalTime,ArrivalDay,ArrivalMonth,ArrivalYear,Price,DepartureTime FROM flight WHERE origin='".$origin."' AND destination='".$destination."'
-         and DepartureDate=".$date[0]."and DepartureMonth=".$month."and DepartureYear=".$date[2];
-        
+        $sql = "SELECT FlightID,ArrivalTime,ArrivalDay,ArrivalMonth,ArrivalYear,Price,DepartureTime FROM flight WHERE origin='".$origin.
+                "' AND destination='".$destination."' AND DepartureDate=".$date[0]." AND DepartureMonth=".$month." AND DepartureYear=".$date[2];
+        //SELECT FlightID,ArrivalTime,ArrivalDay,ArrivalMonth,ArrivalYear,Price,DepartureTime FROM flight WHERE origin='Kuala Lumpur(KUL)' AND destination='Dar Es Salaam(DAR)'
+       //  and DepartureDate=02 and DepartureMonth=4 and DepartureYear=2015;
         echo " origin is ".$origin;
+        echo " year is ".$date[2]." month is ".$month." date is ".$date[0]." yolo ";
         $result = $conn->query($sql);
         echo "no prob here";
-        echo "\n result is ".$result;//result is empty
+       // echo " result is ".$result;//result is empty
         //echo "<select>";
        // echo "result is ".$result->num_rows;               
         if ($result->num_rows > 0) {
