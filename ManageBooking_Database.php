@@ -13,8 +13,8 @@
         $servername = "localhost";
         //change these according to your database credentials
         $username = "root";
-        $password = "";
-        $dbname = "sqm"
+        $password = "root";
+        $dbname = "sqm";
         $bookingNum=isset($_POST['booking'])?$_POST['booking']:" ";
         $pwd=isset($_POST['passport'])?$_POST['passport']:" ";
         // Create connection
@@ -26,11 +26,11 @@
 
         $sql = "SELECT FlightID, SeatID, PassportNumber FROM customer";
         $result = $conn->query($sql);
-        $bookingExists=false;
+        $bookingI=false;
         if (($result->num_rows > 0)&&($bookingNum!=" "&&$pwd!=" ")) {
              // output data of each row
              
-             while(($row = $result->fetch_assoc())&&$bookingExists==false) {
+             while(($row = $result->fetch_assoc())&&$bookingI==false) {
                 $booking_ID=$row["FlightID"].$row["SeatID"];
                 echo $booking_ID;
                 if($booking_ID==$bookingNum){
