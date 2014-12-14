@@ -13,9 +13,10 @@
         $servername = "localhost";
         //change these according to your database credentials
         $username = "root";
-        $password = "";
-        $dbname = "sqm"
-        $bookingNum=isset($_POST['booking'])?$_POST['booking']:" ";
+        $password = "root";
+        $dbname = "sqm";
+        $bookingNum=isset($_POST['booking'])?$_POST['booking']:"null";
+       // $bookingNum="null";
         $pwd=isset($_POST['passport'])?$_POST['passport']:" ";
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -23,11 +24,11 @@
         if ($conn->connect_error) {
              die("Connection failed: " . $conn->connect_error);
         }
-
+        echo "booking num is ".$bookingNum;
         $sql = "SELECT FlightID, SeatID, PassportNumber FROM customer";
         $result = $conn->query($sql);
         $bookingExists=false;
-        if (($result->num_rows > 0)&&($bookingNum!=" "&&$pwd!=" ")) {
+        if (($result->num_rows > 0)&&($bookingNum!="null"&&$pwd!=" ")) {
              // output data of each row
              
              while(($row = $result->fetch_assoc())&&$bookingExists==false) {
