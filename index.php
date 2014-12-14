@@ -73,7 +73,6 @@ Modified by: Sheena, Jake
 	</head>
 
   <body>
-<<<<<<< Updated upstream
          <script>
          //gets the destinations available from database
                 function getDestination(str) {
@@ -118,7 +117,6 @@ event.preventDefault();// using this page stop being refreshing
         });
       });
     </script>
-=======
     <script>
     //gets the destinations available from database
       function getDestination(str) 
@@ -153,7 +151,6 @@ event.preventDefault();// using this page stop being refreshing
       }
       </script>
         
->>>>>>> Stashed changes
     <div id="FirstImage">
       <img src="images/arslogo3.png" alt="plane_logo" width="100%" height="100%" align="left">
     </div>

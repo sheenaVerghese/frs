@@ -63,6 +63,7 @@
         
         echo " month is ".$month. " walala "; 
         echo "dest= ".$destination;
+        
        // Create connection
        $conn = new mysqli($servername, $username, $password, $dbname);
        // Check connection
