@@ -12,7 +12,7 @@
 		
         <link href="style.css" rel="stylesheet" type="text/css">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		
+
         <title>Airline Reservation System</title>
 	</head>
 
@@ -20,7 +20,6 @@
 	<?php
 		include ("traveller.php");
 	?>
-	<div id="FirstImage"><img src="images/arslogo2.png" alt="plane_logo"></div>
 	<nav class="navbar navbar-default" role="navigation">
    		<div class="navbar-header"> 
 			<li><img src="images/logo1.jpg" width="186" height="45" alt=""/></li>
@@ -33,17 +32,15 @@
 		</div>
 	</nav>
 
-	<nav class="navbar navbar-default" role="navigation">
-		<div class="navbar-header"></div>
+
    		<div>
-      		<ul class="nav navbar-nav">        
-                <li><a>Traveller Details</a></li>
-                <li><a>Seats</a></li>
-                <li><a>Add-Ons</a></li>
-                <li><a>Payment</a></li>
-    		  </ul>
+      		<ol class="progtrckr" data-progtrckr-steps="4">
+    <li class="progtrckr-todo">Traveller Details</li><!--
+ --><li class="progtrckr-todo">Seat Selection</li><!--
+ --><li class="progtrckr-todo">Add-Ons</li><!--
+ --><li class="progtrckr-todo">Payment</li>
+</ol>
           </div>
-	</nav>
 
 	<div id="container">
     	<div id="form">
