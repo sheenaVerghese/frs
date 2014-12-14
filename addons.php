@@ -19,7 +19,6 @@
     </head>
 
 	<body>
-		<div id="FirstImage"><img src="images/arslogo2.png" alt="plane_logo"></div>
 		<nav class="navbar navbar-default" role="navigation">
    			<div class="navbar-header">
    				<li><img src="images/logo1.jpg" width="186" height="45" alt=""/></li>
@@ -32,17 +31,16 @@
    			</div>
 		</nav>
 
-        <nav class="navbar navbar-default" role="navigation">
-        	<div class="navbar-header"></div>
+
           	<div>
-                <ul class="nav navbar-nav">        
-                    <li><a href="travellerdetails.php">Traveller Details</a></li>
-                    <li><a href="">Seats</a></li>
-                    <li><a>Add-Ons</a></li>
-                    <li><a>Payment</a></li>
-                 </ul>
+                	<ol class="progtrckr" data-progtrckr-steps="4">
+    <li class="progtrckr-done"><a href="travellerdetails.php">Traveller Details</a></li><!--
+ --><li class="progtrckr-done">Seat Selection</li><!--
+ --><li class="progtrckr-todo">Add-Ons</li><!--
+ --><li class="progtrckr-todo">Payment</li>
+</ol>
+                
            	</div>
-        </nav>
 
 		<div id="container">
    			<div id="meal">
