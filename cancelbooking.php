@@ -3,7 +3,7 @@
 if(isset($_POST['cancelBooking'])) {		
 		
 		
- $servername = "localhost";
+        $servername = "localhost";
         //change these according to your database credentials
         $username = "root";
         $password = "";
@@ -11,7 +11,7 @@ if(isset($_POST['cancelBooking'])) {
 	
 	// codes to cancel the booking
 
-
+      
 
 
 }
